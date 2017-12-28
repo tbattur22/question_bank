@@ -1,75 +1,75 @@
 
 # Table of Contents
 
-1.  [Steps](#orgf903464)
-    1.  [UI Steps](#org0f3e9f0)
-        1.  [Choose Subject and Level](#org47c802f)
-        2.  [Click "See question availability from QB" button to see available questions/types/difficulties](#org4656933)
-        3.  [Number of Questions for each Questions Types](#orgb31f56c)
-        4.  [% of diffilcty levels of questions for the quiz](#org0568f92)
-        5.  [Choose list of Units (All checked by default)](#orgbbed009)
-        6.  [Send request to QB to get questions](#org3280c68)
-    2.  [Technical Steps](#org7b98960)
-        1.  [See question availability from QB](#org4c94180)
-        2.  [Number of questions](#org4b1e461)
-        3.  [% of difficulty levels of questions for the quiz](#orgc48e8ce)
-        4.  [Validate against available question statistics on the LS and display corresponding messages if not correct number](#org6f96d10)
-        5.  [Question Type](#org406ba05)
-2.  [on QB](#orgc1b1d99)
-    1.  [Remove True/False and Matching question types](#orgdd49c35)
-    2.  [question<sub>quiz</sub> table creation - which links quizes with questions](#org2b6f8f0)
-    3.  [Give questions availability statistics via REST service](#org82c158d)
-    4.  [Give list of questions as per AJAX request from LS](#org8e9c4c9)
+1.  [Steps](#org3246804)
+    1.  [UI Steps](#org3bec11f)
+        1.  [Choose Subject and Level](#orge2d1523)
+        2.  [Click "See question availability from QB" button to see available questions/types/difficulties](#org8e9dc16)
+        3.  [Number of Questions for each Questions Types](#orgfebc14e)
+        4.  [% of diffilcty levels of questions for the quiz](#orgab52b43)
+        5.  [Choose list of Units (All checked by default)](#org5062859)
+        6.  [Send request to QB to get questions](#orgdbcb73a)
+    2.  [Technical Steps](#org50b110a)
+        1.  [See question availability from QB](#orgce4d2e6)
+        2.  [Number of questions](#org7f23c7d)
+        3.  [% of difficulty levels of questions for the quiz](#org4776def)
+        4.  [Validate against available question statistics on the LS and display corresponding messages if not correct number](#org1eefe06)
+        5.  [Question Type](#org0188502)
+2.  [on QB](#orga4a0deb)
+    1.  [Remove True/False and Matching question types](#orgd110cb8)
+    2.  [question<sub>quiz</sub> table creation - which links quizes with questions](#org24dea25)
+    3.  [Give questions availability statistics via REST service](#org5b7c584)
+    4.  [Give list of questions as per AJAX request from LS](#orgd35d4ab)
 
 
-<a id="orgf903464"></a>
+<a id="org3246804"></a>
 
 # Steps
 
 
-<a id="org0f3e9f0"></a>
+<a id="org3bec11f"></a>
 
 ## UI Steps
 
 
-<a id="org47c802f"></a>
+<a id="orge2d1523"></a>
 
 ### Choose Subject and Level
 
 
-<a id="org4656933"></a>
+<a id="org8e9dc16"></a>
 
 ### Click "See question availability from QB" button to see available questions/types/difficulties
 
 
-<a id="orgb31f56c"></a>
+<a id="orgfebc14e"></a>
 
 ### Number of Questions for each Questions Types
 
 
-<a id="org0568f92"></a>
+<a id="orgab52b43"></a>
 
 ### % of diffilcty levels of questions for the quiz
 
 
-<a id="orgbbed009"></a>
+<a id="org5062859"></a>
 
 ### Choose list of Units (All checked by default)
 
 
-<a id="org3280c68"></a>
+<a id="orgdbcb73a"></a>
 
 ### Send request to QB to get questions
 
 1.  Receive JSON data with questions
 
 
-<a id="org7b98960"></a>
+<a id="org50b110a"></a>
 
 ## Technical Steps
 
 
-<a id="org4c94180"></a>
+<a id="orgce4d2e6"></a>
 
 ### See question availability from QB
 
@@ -83,7 +83,7 @@
 
     1.  
     
-        {
+        ~{
             "question<sub>type</sub>":
             {
                 "multi<sub>choice</sub>": {
@@ -121,11 +121,11 @@
                 }
             },
         
-        }
+        }~
 
 3.  Send GET request for "Send request to QB to get questions"
 
-    {
+    ~{
         "unit<sub>ids</sub>": [
             123,234, 234234, 123123, 234234, 123123, 234234, 123123213, 234234324, 123123
         ],
@@ -165,13 +165,13 @@
     }
     
         },
-    }
+    }~
 
 4.  Response for "Send request to QB to get questions"
 
     1.  
     
-        {
+        ~{
             "questions": [
                 {
                     "id": 1,
@@ -191,10 +191,10 @@
                     ]
                 }
             ]
-        }
+        }~
 
 
-<a id="org4b1e461"></a>
+<a id="org7f23c7d"></a>
 
 ### Number of questions
 
@@ -205,7 +205,7 @@
 3.  Long Answer - 20
 
 
-<a id="orgc48e8ce"></a>
+<a id="org4776def"></a>
 
 ### % of difficulty levels of questions for the quiz
 
@@ -222,14 +222,14 @@
     5.  Very difficult - 10%
 
 
-<a id="org6f96d10"></a>
+<a id="org1eefe06"></a>
 
 ### Validate against available question statistics on the LS and display corresponding messages if not correct number
 
 1.  For example not enough very difficult questions for Multichoice type etc.
 
 
-<a id="org406ba05"></a>
+<a id="org0188502"></a>
 
 ### Question Type
 
@@ -240,27 +240,27 @@
 3.  Long Answer
 
 
-<a id="orgc1b1d99"></a>
+<a id="orga4a0deb"></a>
 
 # TODO on QB
 
 
-<a id="orgdd49c35"></a>
+<a id="orgd110cb8"></a>
 
 ## TODO Remove True/False and Matching question types
 
 
-<a id="org2b6f8f0"></a>
+<a id="org24dea25"></a>
 
 ## TODO question<sub>quiz</sub> table creation - which links quizes with questions
 
 
-<a id="org82c158d"></a>
+<a id="org5b7c584"></a>
 
 ## TODO Give questions availability statistics via REST service
 
 
-<a id="org8e9c4c9"></a>
+<a id="orgd35d4ab"></a>
 
 ## TODO Give list of questions as per AJAX request from LS
 
