@@ -1,75 +1,76 @@
 
 # Table of Contents
 
-1.  [Steps](#org3246804)
-    1.  [UI Steps](#org3bec11f)
-        1.  [Choose Subject and Level](#orge2d1523)
-        2.  [Click "See question availability from QB" button to see available questions/types/difficulties](#org8e9dc16)
-        3.  [Number of Questions for each Questions Types](#orgfebc14e)
-        4.  [% of diffilcty levels of questions for the quiz](#orgab52b43)
-        5.  [Choose list of Units (All checked by default)](#org5062859)
-        6.  [Send request to QB to get questions](#orgdbcb73a)
-    2.  [Technical Steps](#org50b110a)
-        1.  [See question availability from QB](#orgce4d2e6)
-        2.  [Number of questions](#org7f23c7d)
-        3.  [% of difficulty levels of questions for the quiz](#org4776def)
-        4.  [Validate against available question statistics on the LS and display corresponding messages if not correct number](#org1eefe06)
-        5.  [Question Type](#org0188502)
-2.  [on QB](#orga4a0deb)
-    1.  [Remove True/False and Matching question types](#orgd110cb8)
-    2.  [question<sub>quiz</sub> table creation - which links quizes with questions](#org24dea25)
-    3.  [Give questions availability statistics via REST service](#org5b7c584)
-    4.  [Give list of questions as per AJAX request from LS](#orgd35d4ab)
+1.  [Steps](#orga53fd12)
+    1.  [UI Steps](#org63ea50c)
+        1.  [Choose Subject and Level](#org234b4f2)
+        2.  [Click "See question availability from QB" button to see available questions/types/difficulties](#orgd7011f4)
+        3.  [Number of Questions for each Questions Types](#org93c244f)
+        4.  [% of diffilcty levels of questions for the quiz](#org81a3752)
+        5.  [Choose list of Units (All checked by default)](#org97f1d60)
+        6.  [Send request to QB to get questions](#org4edecbe)
+    2.  [Technical Steps](#org39be014)
+        1.  [See question availability from QB](#orgc08c89f)
+        2.  [Number of questions](#org4cd5e72)
+        3.  [% of difficulty levels of questions for the quiz](#orgd219747)
+        4.  [Validate against available question statistics on the LS and display corresponding messages if not correct number](#org97debf1)
+        5.  [Question Type](#org664c987)
+2.  [on QB](#orgd6e372f)
+    1.  [Remove True/False and Matching question types](#org4b13dd5)
+    2.  [question\_quiz table creation - which links quizes with questions](#orgf7fcf4d)
+    3.  [Give questions availability statistics via REST service](#org3dec771)
+    4.  [Give list of questions as per AJAX request from LS](#org3fc3d9e)
 
 
-<a id="org3246804"></a>
+
+<a id="orga53fd12"></a>
 
 # Steps
 
 
-<a id="org3bec11f"></a>
+<a id="org63ea50c"></a>
 
 ## UI Steps
 
 
-<a id="orge2d1523"></a>
+<a id="org234b4f2"></a>
 
 ### Choose Subject and Level
 
 
-<a id="org8e9dc16"></a>
+<a id="orgd7011f4"></a>
 
 ### Click "See question availability from QB" button to see available questions/types/difficulties
 
 
-<a id="orgfebc14e"></a>
+<a id="org93c244f"></a>
 
 ### Number of Questions for each Questions Types
 
 
-<a id="orgab52b43"></a>
+<a id="org81a3752"></a>
 
 ### % of diffilcty levels of questions for the quiz
 
 
-<a id="org5062859"></a>
+<a id="org97f1d60"></a>
 
 ### Choose list of Units (All checked by default)
 
 
-<a id="orgdbcb73a"></a>
+<a id="org4edecbe"></a>
 
 ### Send request to QB to get questions
 
 1.  Receive JSON data with questions
 
 
-<a id="org50b110a"></a>
+<a id="org39be014"></a>
 
 ## Technical Steps
 
 
-<a id="orgce4d2e6"></a>
+<a id="orgc08c89f"></a>
 
 ### See question availability from QB
 
@@ -84,39 +85,39 @@
     1.  
     
         ~{
-            "question<sub>type</sub>":
+            "question\_type":
             {
-                "multi<sub>choice</sub>": {
-                    "total<sub>question</sub><sub>number</sub>": 222,
-                    "unused<sub>question</sub><sub>number</sub>": 122,
-                    "by<sub>difficulty</sub><sub>level</sub>": {
-                        "very<sub>easy</sub>": 100,
+                "multi\_choice": {
+                    "total\_question\_number": 222,
+                    "unused\_question\_number": 122,
+                    "by\_difficulty\_level": {
+                        "very\_easy": 100,
                         "easy": 40,
                         "medium": 232,
                         "difficult": 234,
-                        "very<sub>difficult</sub>": 111
+                        "very\_difficult": 111
                     }
                 },
-                "short<sub>answer</sub>": {
-                    "total<sub>question</sub><sub>number</sub>": 234,
-                    "unused<sub>question</sub><sub>number</sub>": 122,
-                    "by<sub>difficulty</sub><sub>level</sub>": {
-                        "very<sub>easy</sub>": 100,
+                "short\_answer": {
+                    "total\_question\_number": 234,
+                    "unused\_question\_number": 122,
+                    "by\_difficulty\_level": {
+                        "very\_easy": 100,
                         "easy": 40,
                         "medium": 232,
                         "difficult": 234,
-                        "very<sub>difficult</sub>": 111
+                        "very\_difficult": 111
                     }
                 },
-                "long<sub>answer</sub>": {
-                    "total<sub>question</sub><sub>number</sub>": 234,
-                    "unused<sub>question</sub><sub>number</sub>": 122,
-                    "by<sub>difficulty</sub><sub>level</sub>": {
-                        "very<sub>easy</sub>": 100,
+                "long\_answer": {
+                    "total\_question\_number": 234,
+                    "unused\_question\_number": 122,
+                    "by\_difficulty\_level": {
+                        "very\_easy": 100,
                         "easy": 40,
                         "medium": 232,
                         "difficult": 234,
-                        "very<sub>difficult</sub>": 111
+                        "very\_difficult": 111
                     }
                 }
             },
@@ -126,41 +127,41 @@
 3.  Send GET request for "Send request to QB to get questions"
 
     ~{
-        "unit<sub>ids</sub>": [
+        "unit\_ids": [
             123,234, 234234, 123123, 234234, 123123, 234234, 123123213, 234234324, 123123
         ],
-        "total<sub>questions</sub>": 50,
-        "is<sub>unique</sub><sub>questions</sub>": false,
-        "question<sub>type</sub>": {
-            "multi<sub>choice</sub>": {
+        "total\_questions": 50,
+        "is\_unique\_questions": false,
+        "question\_type": {
+            "multi\_choice": {
                 "number": 10,
-                "difficulty<sub>level</sub>": {
-                    "very<sub>easy</sub>":6,
+                "difficulty\_level": {
+                    "very\_easy":6,
                     "easy": 1
                     "medium": 1
                     "difficult": 1
-                    "very<sub>difficult</sub>": 1
+                    "very\_difficult": 1
                 }
             },
-            "short<sub>answer</sub>": {
+            "short\_answer": {
                 "number": 20,
-                "difficulty<sub>level</sub>": {
-                    "very<sub>easy</sub>":6,
+                "difficulty\_level": {
+                    "very\_easy":6,
                     "easy": 1
                     "medium": 1
                     "difficult": 1
-                    "very<sub>difficult</sub>": 1
+                    "very\_difficult": 1
                 }
     
     },
-    "long<sub>answer</sub>": {
+    "long\_answer": {
         "number": 20,
-        "difficulty<sub>level</sub>": {
-            "very<sub>easy</sub>":6,
+        "difficulty\_level": {
+            "very\_easy":6,
             "easy": 1
             "medium": 1
             "difficult": 1
-            "very<sub>difficult</sub>": 1
+            "very\_difficult": 1
         }
     }
     
@@ -178,14 +179,14 @@
                     "title": "Title",
                     "body": "BODY",
                     "rubric": "llksdjflksdj",
-                    "type": "short<sub>answer</sub>",
-                    "difficulty<sub>level</sub>": "very<sub>easy</sub>",
-                    "qual<sub>link</sub>": {},
+                    "type": "short\_answer",
+                    "difficulty\_level": "very\_easy",
+                    "qual\_link": {},
                     "answers": [
                         {
                             "id": 1,
                             "body": "This is the answer",
-                            "question<sub>id</sub>": "The question<sub>id</sub>",
+                            "question\_id": "The question\_id",
                             "correct": 1
                         }
                     ]
@@ -194,7 +195,7 @@
         }~
 
 
-<a id="org7f23c7d"></a>
+<a id="org4cd5e72"></a>
 
 ### Number of questions
 
@@ -205,7 +206,7 @@
 3.  Long Answer - 20
 
 
-<a id="org4776def"></a>
+<a id="orgd219747"></a>
 
 ### % of difficulty levels of questions for the quiz
 
@@ -222,14 +223,14 @@
     5.  Very difficult - 10%
 
 
-<a id="org1eefe06"></a>
+<a id="org97debf1"></a>
 
 ### Validate against available question statistics on the LS and display corresponding messages if not correct number
 
 1.  For example not enough very difficult questions for Multichoice type etc.
 
 
-<a id="org0188502"></a>
+<a id="org664c987"></a>
 
 ### Question Type
 
@@ -240,27 +241,27 @@
 3.  Long Answer
 
 
-<a id="orga4a0deb"></a>
+<a id="orgd6e372f"></a>
 
 # TODO on QB
 
 
-<a id="orgd110cb8"></a>
+<a id="org4b13dd5"></a>
 
 ## TODO Remove True/False and Matching question types
 
 
-<a id="org24dea25"></a>
+<a id="orgf7fcf4d"></a>
 
-## TODO question<sub>quiz</sub> table creation - which links quizes with questions
+## TODO question\_quiz table creation - which links quizes with questions
 
 
-<a id="org5b7c584"></a>
+<a id="org3dec771"></a>
 
 ## TODO Give questions availability statistics via REST service
 
 
-<a id="orgd35d4ab"></a>
+<a id="org3fc3d9e"></a>
 
 ## TODO Give list of questions as per AJAX request from LS
 
