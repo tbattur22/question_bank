@@ -78,6 +78,8 @@
     1.  Subject ID
     
     2.  Level ID
+    
+    3. Partner IDs
 
 2.  Receive JSON of "available questions data"
 
